@@ -2,9 +2,9 @@
 const nav = [
   { text: '首页', link: '/', activeMatch: '^/$' },
   {
-    text: '指南',
-    link: '/guide/',
-    activeMatch: '^/guide/'
+    text: '手册',
+    link: '/manual/',
+    activeMatch: '^/manual/'
   },
   {
     text: 'VitePress',
@@ -13,11 +13,13 @@ const nav = [
 ]
 
 const sidebar = {
-  '/guide/': [
+  '/manual/': [
     {
       text: 'Guide',
       items: [
-        {text: '指南', link: '/guide/'},
+        {text: '指南', link: '/manual/guide'},
+        {text: '参考', link: '/manual/reference'},
+
       ]
     },
   ],

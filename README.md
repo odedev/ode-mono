@@ -1,38 +1,21 @@
 # Monorepo
 
-## init
-```shell
-# mkdir tools
+### Rush 常用命令
 
-mkdir libraries
-mkdir libraries/core-common
+```
+npm install -g @microsoft/rush
 
-mkdir apps
-mkdir apps/app-doc
+# 按需安装 NPM 包
+rush update
 
-cd libraries/core-common
-mkdir src
-npm init -y
-cd ../../
+# 清理并重新构建所有项目
+rush rebuild
 
-cd apps/app-doc
-mkdir src
-npm init -y
-npm install --save-dev vitepress vue
-cd ../../
+# 进入某个项目内
+cd ./my-project
 
-cd libraries
-npm create vite@latest core-vue -- --template vue
-cd core-vue
-npm install --save-dev sass
-cd ../../
-
-cd apps
-npm init vue@latest
-# app-portal
-npm install --save element-plus
-npm install --save @element-plus/icons-vue
-npm install --save echarts
-npm install --save-dev sass
+# 假设 package.json 内存在 "start" 指令。
+# (通过 "rushx" 来查看可用的命令)
+rushx start
 
 ```

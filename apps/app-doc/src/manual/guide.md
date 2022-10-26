@@ -34,6 +34,7 @@ npm init vue@latest
 npm install --save element-plus
 npm install --save @element-plus/icons-vue
 npm install --save echarts
+npm install --save axios
 npm install --save-dev sass
 
 ```

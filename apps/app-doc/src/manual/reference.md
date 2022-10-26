@@ -20,3 +20,11 @@
 ### Test
 + [Cypress](https://www.cypress.io/)
 + [Cypress Component Testing](https://on.cypress.io/component)
+
+
++ [Rush](https://rushjs.io/zh-cn/)
++ [VitePress](https://vitepress.vuejs.org/)
++ [Axios](https://axios-http.com/)
+
++ [MDN](https://developer.mozilla.org/)
++ [ECMAScript 6 入门教程](https://es6.ruanyifeng.com/)

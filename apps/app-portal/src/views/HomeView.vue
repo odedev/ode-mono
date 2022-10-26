@@ -1,9 +1,61 @@
+<template>
+  <el-container class="app-container">
+    <el-header class="app-header">
+      <LayoutHeader />
+    </el-header>
+    <el-container>
+      <el-aside class="app-aside" width="260px">
+        <el-scrollbar>
+          <Nav />
+        </el-scrollbar>
+      </el-aside>
+      <el-container>
+        <el-main class="app-main">
+          <div class="app-main__content">
+            <Breadcrumb />
+            <Tag />
+            <LayoutBody>
+              <!-- <Transition name="el-fade-in">
+                <RouterView />
+              </Transition> -->
+              <router-view v-slot="{ Component }">
+                <transition>
+                  <component :is="Component" />
+                </transition>
+              </router-view>
+            </LayoutBody>
+          </div>
+        </el-main>
+        <!-- <el-footer>Footer</el-footer> -->
+      </el-container>
+    </el-container>
+  </el-container>
+</template>
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { RouterView } from 'vue-router'
+import LayoutHeader from '@/components/layout/LayoutHeader.vue'
+import LayoutBody from '@/components/layout/LayoutBody.vue'
+import Nav from '@/components/nav/Nav.vue'
+import Breadcrumb from '@/components/breadcrumb/Breadcrumb.vue'
+import Tag from '@/components/tag/Tag.vue'
+
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style>
+.app-header.el-header {
+  padding: 0;
+}
+.app-aside {
+  height:  calc(100vh - 60px);
+  /* background-color: #545c64; */
+  border-right: solid 1px var(--el-border-color);
+}
+.app-main.el-main {
+  padding: 0;
+}
+.app-main__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+</style>
